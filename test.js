@@ -1,4 +1,4 @@
-import add from 'app.js'
+import add from './app.js'
 
 if(add(2,3) === 5){
  console.log("Test Passed");
