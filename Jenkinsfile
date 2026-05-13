@@ -2,21 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+
+        stage('Checkout') {
             steps {
-                git 'https://github.com/acpx1337x2/jenkins-node.git/'
+                git branch: 'main',
+                    url: 'https://github.com/acpx1337x2/jenkins-node.git'
             }
         }
 
         stage('Install') {
             steps {
                 sh 'npm install'
-            }
-        }
-
-        stage('Run App') {
-            steps {
-                sh 'node app.js'
             }
         }
 
@@ -27,4 +23,3 @@ pipeline {
         }
     }
 }
-EOF
